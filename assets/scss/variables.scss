@@ -1,3 +1,8 @@
+@import "nord.scss";
+
+$defaultTagBackgrounds: $nord11, $nord12, $nord13, $nord14, $nord15;
+$defaultTagColors: $nord6, $nord6, $nord6, $nord6, $nord6;
+
 /*
 *   Global style
 */
@@ -8,23 +13,29 @@
         --main-top-padding: 50px;
     }
 
-    --body-background: #f5f5fa;
+    --body-background: #{$nord6};
 
-    --accent-color: #34495e;
-    --accent-color-darker: #2c3e50;
-    --accent-color-text: #fff;
-    --body-text-color: #707070;
+    --accent-color: #{$nord8};
+    --accent-color-darker: #{$nord7};
+    --accent-color-text: #{$nord6};
+    --body-text-color: #{$nord2};
 
     --tag-border-radius: 4px;
 
     --section-separation: 40px;
 
+    --show-in-light: inline;
+    --show-in-dark: none;
+
     &[data-scheme="dark"] {
-        --body-background: #303030;
-        --accent-color: #ecf0f1;
-        --accent-color-darker: #bdc3c7;
-        --accent-color-text: #000;
-        --body-text-color: rgba(255, 255, 255, 0.7);
+        --body-background: #{$nord0};
+        --accent-color: #{$nord8};
+        --accent-color-darker: #{$nord7};
+        --accent-color-text: #{$nord6};
+        --body-text-color: #{$nord4};
+
+        --show-in-light: none;
+        --show-in-dark: inline;
     }
 }
 
@@ -32,9 +43,9 @@
 *   Global font family
 */
 :root {
-    --sys-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Droid Sans", "Helvetica Neue";
-    --base-font-family: "Lato", var(--sys-font-family), sans-serif;
-    --code-font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    --base-font-family: sans-serif;
+    --unifont-family: "Unifont", sans-serif;
+    --code-font-family: monospace;
 }
 
 /*
@@ -42,12 +53,12 @@
 */
 :root {
     --card-background: #fff;
-    --card-background-selected: #eaeaea;
+    --card-background-selected: #{$nord6};
 
-    --card-text-color-main: #000;
-    --card-text-color-secondary: #747474;
-    --card-text-color-tertiary: #767676;
-    --card-separator-color: rgba(218, 218, 218, 0.5);
+    --card-text-color-main: #{$nord0};
+    --card-text-color-secondary: #{$nord2};
+    --card-text-color-tertiary: #{$nord3};
+    --card-separator-color: #{$nord4};
 
     --card-border-radius: 10px;
 
@@ -68,12 +79,12 @@
     }
 
     &[data-scheme="dark"] {
-        --card-background: #424242;
-        --card-background-selected: rgba(255, 255, 255, 0.16);
-        --card-text-color-main: rgba(255, 255, 255, 0.9);
-        --card-text-color-secondary: rgba(255, 255, 255, 0.7);
-        --card-text-color-tertiary: rgba(255, 255, 255, 0.5);
-        --card-separator-color: rgba(255, 255, 255, 0.12);
+        --card-background: #{$nord1};
+        --card-background-selected: #{$nord2};
+        --card-text-color-main: #{$nord6};
+        --card-text-color-secondary: #{$nord5};
+        --card-text-color-tertiary: #{$nord4};
+        --card-separator-color: #{$nord3};
     }
 }
 
@@ -95,42 +106,53 @@
 *   Article content style
 */
 :root {
-    --blockquote-border-size: 4px;
-    --blockquote-background-color: rgb(248 248 248);
+    --blockquote-border-size: 8px;
+    --blockquote-background-color: #{$nord6};
 
     --heading-border-size: 4px;
 
-    --alert-note-color: #4da3ff;
-    --alert-note-background: rgba(77, 163, 255, 0.08);
-    --alert-tip-color: #3fb950;
-    --alert-tip-background: rgba(63, 185, 80, 0.08);
-    --alert-important-color: #8457d9;
-    --alert-important-background: rgba(130, 80, 223, 0.08);
-    --alert-warning-color: #d29922;
-    --alert-warning-background: rgba(210, 153, 34, 0.1);
-    --alert-caution-color: #f85149;
-    --alert-caution-background: rgba(248, 81, 73, 0.1);
+    --alert-note-color: #{$nord8};
+    --alert-note-background: rgba($nord8, 0.08);
+    --alert-tip-color: #{$nord14};
+    --alert-tip-background: rgba($nord14, 0.08);
+    --alert-important-color: #{$nord15};
+    --alert-important-background: rgba($nord15, 0.08);
+    --alert-warning-color: #{$nord12};
+    --alert-warning-background: rgba($nord12, 0.1);
+    --alert-caution-color: #{$nord11};
+    --alert-caution-background: rgba($nord11, 0.1);
 
-    --link-background-color: 189, 195, 199;
+    --link-background-color: #{$nord4};
     --link-background-opacity: 0.5;
     --link-background-opacity-hover: 0.7;
 
-    --code-background-color: rgba(0, 0, 0, 0.12);
-    --code-text-color: #808080;
+    --code-background-color: #{$nord6};
+    --code-text-color: #{$nord3};
 
-    --table-border-color: #dadada;
-    --tr-even-background-color: #efefee;
+    --highlight-background-color: #{$nord0};
 
-    --kbd-border-color: #dadada;
+    --table-border-color: #{$nord4};
+    --tr-even-background-color: #{$nord6};
+
+    --kbd-border-color: #{$nord3};
+
+    --mark-background-color: #{$nord13};
+    --mark-text-color: #{$nord0};
 
     &[data-scheme="dark"] {
-        --code-background-color: #272822;
-        --code-text-color: rgba(255, 255, 255, 0.9);
+        --blockquote-background-color: #{$nord0};
 
-        --table-border-color: #717171;
-        --tr-even-background-color: #545454;
+        --link-background-color: 46, 52, 64;
 
-        --blockquote-background-color: rgb(75 75 75);
+        --code-background-color: #{$nord0};
+        --code-text-color: #{$nord4};
+
+        --highlight-background-color: #{$nord0};
+
+        --table-border-color: #{$nord4};
+        --tr-even-background-color: #{$nord2};
+
+        --kbd-border-color: #{$nord4};
     }
 }
 
@@ -149,14 +171,14 @@
 }
 
 [data-scheme="light"] {
-    --pre-text-color: #272822;
-    --pre-background-color: #fafafa;
+    --pre-text-color: #{$nord4};
+    --pre-background-color: #{$nord0};
     @import "partials/highlight/light.scss";
 }
 
 [data-scheme="dark"] {
-    --pre-text-color: #f8f8f2;
-    --pre-background-color: #272822;
+    --pre-text-color: #{$nord4};
+    --pre-background-color: #{$nord0};
     @import "partials/highlight/dark.scss";
 }
 

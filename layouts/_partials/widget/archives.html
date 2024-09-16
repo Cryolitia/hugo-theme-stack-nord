@@ -19,6 +19,7 @@
         <div class="widget-archive--list">
             {{ range $index, $item := first (add $limit 1) ($archives) }}
                 {{- $id := lower (replace $item.Key " " "-") -}}
+                {{ if ge .Key 2000 }}
                 <div class="archives-year">
                     <a href="{{ $archivesPage.RelPermalink }}#{{ $id }}">
                         {{ if eq $index $limit }}
@@ -29,6 +30,7 @@
                         {{ end }}
                     </a> 
                 </div>
+                {{ end }}
             {{ end }}
         </div>
     </section>

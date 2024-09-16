@@ -11,7 +11,7 @@ html {
 body {
     background: var(--body-background);
     margin: 0;
-    font-family: var(--base-font-family);
+    font-family: var(--unifont-family);
     font-size: 1.6rem;
     text-autospace: ideograph-alpha ideograph-numeric punctuation insert;
     text-spacing-trim: trim-start allow-end;

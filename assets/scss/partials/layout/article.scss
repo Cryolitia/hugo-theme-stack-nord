@@ -29,20 +29,6 @@
             }
         }
 
-        .article-content {
-            margin: var(--card-padding) 0;
-            color: var(--card-text-color-main);
-
-            .footnotes {
-                font-family: var(--base-font-family);
-            }
-
-            img {
-                max-width: 100%;
-                height: auto;
-            }
-        }
-
         .article-footer {
             margin: var(--card-padding);
             gap: var(--spacing-2xl);
@@ -193,6 +179,22 @@
 }
 
 .article-content {
+    margin: var(--card-padding) 0;
+    color: var(--card-text-color-main);
+
+    .footnotes {
+        font-family: var(--unifont-family);
+
+        ol {
+            font-family: var(--article-font-family);
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
     font-family: var(--article-font-family);
     font-size: var(--article-font-size);
     padding: 0 var(--card-padding);
@@ -348,8 +350,13 @@
         }
     }
 
+    mark {
+        background-color: var(--mark-background-color);
+        color: var(--mark-text-color);
+    }
+
     .highlight {
-        background-color: var(--pre-background-color);
+        background-color: var(--highlight-background-color);
         padding: var(--card-padding);
         position: relative;
 

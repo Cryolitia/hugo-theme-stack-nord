@@ -1,6 +1,6 @@
 {{- $IsList := .IsList -}}
 {{- $Page := .Page -}}
-<div class="article-details">
+<div class="article-details {{ if .Params.about }} article-details-about {{ end }}">
     {{ if $Page.Params.categories }}
     <header class="article-category">
         {{ range ($Page.GetTerms "categories") }}

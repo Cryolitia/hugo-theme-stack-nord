@@ -24,6 +24,18 @@
             }
         }
     }
+
+    .article-details-about {
+        padding-bottom: 0;
+    }
+
+    .article-details-about footer {
+        display: none;
+    }
+
+    .article-content-about {
+        font-family: var(--unifont-family);
+    }
 }
 
 .article-details {
@@ -35,7 +47,6 @@
 }
 
 .article-title {
-    font-family: var(--article-font-family);
     font-weight: 600;
     margin: 0;
     color: var(--card-text-color-main);
@@ -397,4 +408,12 @@
     left: -9999px;
     visibility: hidden;
     width: 800px;
+}
+
+.show-in-light {
+    display: var(--show-in-light);
+}
+
+.show-in-dark {
+    display: var(--show-in-dark);
 }
