@@ -185,8 +185,6 @@
 .article-list--tile {
     article {
         position: relative;
-        width: var(--article-tile-width);
-        height: var(--article-tile-height);
         @include card-style;
         overflow: hidden;
         transition: box-shadow 0.3s ease;
