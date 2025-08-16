@@ -1,0 +1,47 @@
+<!-- layouts/shortcodes/vertical_images.html -->
+<div class="vertical-images">
+  <table>
+    {{ $prefix := .Get "prefix" }}
+    {{ $suffix := .Get "suffix" }}
+    {{ $count := .Get "count" | int }}
+    {{ range $i := seq 1 $count }}
+      {{ $num := printf "%02d" $i }}
+      <tr>
+        <td>
+          <img src="{{ $prefix }}{{ $num }}{{ $suffix }}" alt="Image {{ $num }}">
+        </td>
+      </tr>
+    {{ end }}
+  </table>
+</div>
+
+<style>
+.vertical-images {
+  margin: 2em 0;
+  display: inline-block;
+  border: none;
+  padding: 1em;
+  background: none;
+}
+
+.vertical-images table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.vertical-images table,th,td {
+    border: none !important;
+    background-color: transparent !important;
+}
+
+.vertical-images tr:nth-child(even) {
+    background-color: transparent !important;
+}
+
+.vertical-images img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  padding: 1em;
+}
+</style>
