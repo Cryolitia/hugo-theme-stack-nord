@@ -1,0 +1,7 @@
+<details>
+    <summary>{{ .Get "title" }}</summary>
+    {{ $prefix := .Get "path" }}
+    {{ $content := readFile $prefix }}
+    {{ $fullcontent := printf "``````%s\n%s\n``````" $prefix $content }}
+    {{ $fullcontent | markdownify }}
+</details>
