@@ -3,6 +3,20 @@
 $defaultTagBackgrounds: $nord11, $nord12, $nord13, $nord14, $nord15;
 $defaultTagColors: $nord6, $nord6, $nord6, $nord6, $nord6;
 
+@font-face {
+    font-family: "Unifont";
+    src: url("/fonts/UnifontExMono.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Noto Color Emoji";
+    src: url("/fonts/NotoColorEmoji-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
 /*
 *   Global style
 */
@@ -46,6 +60,7 @@ $defaultTagColors: $nord6, $nord6, $nord6, $nord6, $nord6;
     --base-font-family: sans-serif;
     --unifont-family: "Unifont", sans-serif;
     --code-font-family: monospace;
+    --emoji-font-family: "Noto Color Emoji", sans-serif;
 }
 
 /*
