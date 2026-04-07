@@ -14,6 +14,14 @@
     </header>
     {{ end }}
 
+    {{ if $Page.Params.tags }}
+        <section class="article-tags">
+            {{ range ($Page.GetTerms "tags") }}
+                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            {{ end }}
+        </section>
+    {{ end }}
+
     <div class="article-title-wrapper">
         <h2 class="article-title">
             <a href="{{ $Page.RelPermalink }}">
