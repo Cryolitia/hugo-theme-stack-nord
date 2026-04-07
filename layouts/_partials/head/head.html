@@ -23,10 +23,12 @@
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
 {{- end -}}
 
+<!-- FIXME -->
 {{- $favicon := partial "helper/image" (dict "Image" .Site.Params.favicon "Resources" resources "Context" .) -}}
 {{ with $favicon }}
     <link rel="shortcut icon" href="{{ .Permalink }}" />
 {{ end }}
+<link rel="shortcut icon" href="{{ .Site.Params.favicon }}" />
 
 {{- if .Site.Params.cookies.enabled -}}
     {{- partial "cookies/analytics.html" . -}}
